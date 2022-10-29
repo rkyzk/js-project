@@ -18,13 +18,34 @@ let colors = ["green", "green", "yellow", "yellow", "pink", "pink", "aquamarine"
 "aquamarine", "purple", "purple", "orange", "orange"];
 
 let cards = document.getElementsByClassName("cards");
+let twoColors = [];
+
 for (i = 0; i < cards.length; i++) {
   cards[i].addEventListener("click", function () {
   let cardNum = parseInt(this.getAttribute('id').substr(4));
   console.log(cardNum);
   this.style.backgroundColor = colors[num[cardNum - 1]];
+  
+  twoColors.push([cardNum, colors[num[cardNum - 1]]]);
+  console.log(twoColors);
+  if (twoColors.length === 2) {
+    if (twoColors[0][1] === twoColors[1][1]) {
+        setTimeout (function () {
+          cards[twoColors[0][0]].display = hidden;
+          cards[twoColors[1][0]].display = hidden;
+        }, 1000);
+      } else {
+      setTimeout (function () {
+        cards[twoColors[0][0]].style.backgroundColor = "darkOliveGreen";
+        cards[twoColors[1][0]].style.backgroundColor = "darkOliveGreen";
+      }, 1000);
+  }
+  }
   });
+
 }
+
+
  
 
 
