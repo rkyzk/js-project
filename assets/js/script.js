@@ -1,7 +1,3 @@
-
-// let card1 = document.getElementById("card1");
-// card1.addEventListener("click", displayImg);
-
 let num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
 function shuffle(num) {
@@ -20,6 +16,10 @@ let colors = ["green", "green", "yellow", "yellow", "pink", "pink", "aquamarine"
 let cards = document.getElementsByClassName("cards");
 let twoColors = [];
 
+runGame();
+
+
+function runGame () {
 for (i = 0; i < cards.length; i++) {
   cards[i].addEventListener("click", function () {
   let cardNum = parseInt(this.getAttribute('id').substr(4));
@@ -30,22 +30,23 @@ for (i = 0; i < cards.length; i++) {
   console.log(twoColors);
   if (twoColors.length === 2) {
     if (twoColors[0][1] === twoColors[1][1]) {
-       console.log("yes!")
-      // setTimeout (function () {
-      //     cards[twoColors[0][0]].display = hidden;
-      //     cards[twoColors[1][0]].display = hidden;
-      //   }, 1000);
+      console.log(cards[twoColors[0][0] - 1]);
+      setTimeout (function () {
+        cards[twoColors[0][0] - 1].display = hidden;
+        cards[twoColors[1][0] - 1].display = hidden;
+      }, 1000);
       } else {
         console.log("keep trying")
         setTimeout (function () {
-        console.log(cards[twoColors[0][0]]);
-        //cards[twoColors[0][0]].style.backgroundColor = "beige";
-        //cards[twoColors[1][0]].style.backgroundColor = "beige";
-      }, 1000);
+        console.log(cards[twoColors[0][0] - 1]);
+        console.log(cards[twoColors[1][0] - 1]);
+        cards[twoColors[0][0] - 1].style.backgroundColor = "beige";
+        cards[twoColors[1][0] - 1].style.backgroundColor = "beige";
+      }, 2000);
   }
   }
   });
-
+}
 }
 
 
