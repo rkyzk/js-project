@@ -30,14 +30,17 @@ for (i = 0; i < cards.length; i++) {
   console.log(twoColors);
   if (twoColors.length === 2) {
     if (twoColors[0][1] === twoColors[1][1]) {
-        setTimeout (function () {
-          cards[twoColors[0][0]].display = hidden;
-          cards[twoColors[1][0]].display = hidden;
-        }, 1000);
+       console.log("yes!")
+      // setTimeout (function () {
+      //     cards[twoColors[0][0]].display = hidden;
+      //     cards[twoColors[1][0]].display = hidden;
+      //   }, 1000);
       } else {
-      setTimeout (function () {
-        cards[twoColors[0][0]].style.backgroundColor = "darkOliveGreen";
-        cards[twoColors[1][0]].style.backgroundColor = "darkOliveGreen";
+        console.log("keep trying")
+        setTimeout (function () {
+        console.log(cards[twoColors[0][0]]);
+        //cards[twoColors[0][0]].style.backgroundColor = "beige";
+        //cards[twoColors[1][0]].style.backgroundColor = "beige";
       }, 1000);
   }
   }
