@@ -25,26 +25,29 @@ for (i = 0; i < cards.length; i++) {
   let cardNum = parseInt(this.getAttribute('id').substr(4));
   console.log(cardNum);
   this.style.backgroundColor = colors[num[cardNum - 1]];
-  
   twoColors.push([cardNum, colors[num[cardNum - 1]]]);
   console.log(twoColors);
   if (twoColors.length === 2) {
     if (twoColors[0][1] === twoColors[1][1]) {
       console.log(cards[twoColors[0][0] - 1]);
       setTimeout (function () {
-        cards[twoColors[0][0] - 1].display = hidden;
-        cards[twoColors[1][0] - 1].display = hidden;
+        cards[twoColors[0][0] - 1].style.visibility = "hidden";
+        cards[twoColors[1][0] - 1].style.visibility = "hidden";
       }, 1000);
       } else {
-        console.log("keep trying")
+        console.log("keep trying");
         setTimeout (function () {
         console.log(cards[twoColors[0][0] - 1]);
         console.log(cards[twoColors[1][0] - 1]);
         cards[twoColors[0][0] - 1].style.backgroundColor = "beige";
         cards[twoColors[1][0] - 1].style.backgroundColor = "beige";
       }, 2000);
+  }   setTimeout (function () {
+        twoColors = [];   
+        console.log(twoColors); 
+  }, 2500);
   }
-  }
+
   });
 }
 }

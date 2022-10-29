@@ -16,6 +16,7 @@ h1 {
   height: 150px;
   background-color: beige;
   border-radius: 5px;
+  display: visible;
 }
 
 .images {
