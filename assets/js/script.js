@@ -73,8 +73,7 @@ function flipCards(event){
 /**
  * check if the two flipped cards are the same
  * and handle them accordingly
- * @param {} flipped0 
- * @param {*} flipped1 
+ * @param flipped0
  */
 function check(flipped0, flipped1) {
   let cards = document.querySelector("#cards-wrapper");  
@@ -118,11 +117,12 @@ function reward() {
       count++;
     }
   }
-  if (count === 12) {
+  if (count === 2) {
     let myNode = document.getElementById('cards-wrapper');
     myNode.innerHTML = '';
     let message = document.createElement('h2');
     message.innerHTML = `<em>Well Done!</em>`;
+    message.id = "message";
     let graphics = document.createElement('img');
     graphics.src = 'assets/images/savanna-forest.jpg';
     graphics.alt = 'savanna forest';

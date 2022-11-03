@@ -1,4 +1,4 @@
-h1, h2 {
+body {
   text-align: center;
   font-family: Montserrat, "sans-serif";
 }
@@ -24,6 +24,13 @@ img {
   height: 100%;  
 }
 
-h2 {
+#message {
+  text-align: center;
   color: rgba(90, 8, 8, 0.308);
+}
+
+#stars {
+  display: flex;
+  width: 195px;
+  margin: 20px auto;
 }
